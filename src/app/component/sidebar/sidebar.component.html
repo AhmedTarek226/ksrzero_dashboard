@@ -1,0 +1,186 @@
+<div class="flex-shrink-0 bg-white">
+  <div
+    class="d-flex justify-content-between align-items-center w-100 border-bottom pb-2"
+  >
+    <h3 class="fs-5 fw-semibold text-primary">
+      <i class="fa-solid fa-clipboard"></i> Dashboard
+    </h3>
+    <button
+      class="btn btn-outline-primary d-lg-none"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#ee"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  <ul class="list-unstyled">
+    <li class="mb-1 my-3 mx-1">
+      <!-- data-bs-toggle="collapse" -->
+      <a
+        class="btn btn-toggle d-inline-flex align-items-center rounded border shadow-sm w-100 text-primary"
+        role="button"
+        routerLink="/home"
+      >
+        <i class="fa-solid fa-house mx-2"></i> Home
+      </a>
+    </li>
+    <li class="mb-1 my-3 mx-1">
+      <a
+        class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 text-primary"
+        role="button"
+        routerLink="/users"
+      >
+        <i class="fa-solid fa-user-group mx-2"></i> Users
+      </a>
+    </li>
+    <li class="mb-1 my-3 mx-1">
+      <a
+        class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 text-primary"
+        role="button"
+        routerLink="/categories"
+      >
+        <i class="fa-solid fa-folder mx-2"></i>Categories
+      </a>
+    </li>
+    <li class="mb-1 my-3 mx-1">
+      <a
+        class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 text-primary"
+        role="button"
+        routerLink="/pendingAds"
+      >
+        <i class="fa-solid fa-circle-pause mx-2"></i> Pending Ads
+      </a>
+    </li>
+    <li class="mb-1 my-3 mx-1">
+      <a
+        class="btn btn-toggle d-inline-flex align-items-center rounded border-0 w-100 text-primary"
+        role="button"
+        routerLink="/deliveredOrders"
+      >
+        <i class="fa-solid fa-truck-fast mx-2"></i>Delivered Orders
+        <!-- <i class="fa-solid fa-truck-fast fa-shake"></i>All Orders -->
+      </a>
+    </li>
+    <li class="mb-1 my-3 mx-1">
+      <button
+        class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 text-primary"
+        data-bs-toggle="collapse"
+        data-bs-target="#pendingOrders"
+        aria-expanded="true"
+      >
+        <i class="fa-solid fa-bag-shopping mx-2"></i>
+        <!-- <i class="fa-solid fa-bag-shopping fa-beat-fade"></i> -->
+        Pending Orders
+        <i class="fa-solid fa-angle-down ms-auto"></i>
+      </button>
+      <div class="collapse" id="pendingOrders">
+        <form action="" method="post">
+          <ul
+            class="btn-toggle-nav list-unstyled border rounded fw-normal pb-1 small ps-4"
+          >
+            <li class="mb-1 my-3 mx-1">
+              <a
+                class="btn btn-toggle d-inline-flex border-0 align-items-center rounded collapsed w-100 text-primary"
+                data-bs-target="#allOrders"
+                aria-expanded="true"
+                role="button"
+                routerLink="/buyingOrders"
+              >
+                Buying orders
+              </a>
+            </li>
+            <li class="mb-1 my-3 mx-1">
+              <a
+                class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed w-100 text-primary"
+                data-bs-target="#allOrders"
+                aria-expanded="true"
+                role="button"
+                routerLink="/exchangingOrders"
+              >
+                Exchanging orders
+              </a>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </li>
+    <li class="mb-1 mt-5 mx-1">
+      <a
+        class="btn btn-toggle d-inline-flex bg-primary align-items-center rounded border-0 w-100 text-white"
+        role="button"
+        data-bs-toggle="modal"
+        data-bs-target="#add_admin"
+      >
+        <i class="fa-solid fa-plus mx-2"></i>Add Admin
+      </a>
+    </li>
+    <li class="mb-1 mt-2 mx-1">
+      <a
+        class="btn btn-toggle d-inline-flex bg-primary align-items-center rounded border-0 w-100 text-white"
+        role="button"
+        href="#"
+        aria-expanded="true"
+      >
+        <i class="fa-solid fa-arrow-up-right-from-square mx-2"></i>Go to website
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- add admin -->
+<div class="modal fade p-2" id="add_admin">
+  <div class="modal-dialog modal-dialog-scrollable p-2">
+    <form
+      class="modal-content"
+      method="post"
+      action="http://localhost:4000/admin/register"
+    >
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title text-white">Add Admin</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body p-5">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder=""
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="text"
+            class="form-control"
+            id="password"
+            name="password"
+            placeholder=""
+          />
+        </div>
+        <div class="mb-3">
+          <label for="confirmpassword" class="form-label"
+            >Confirm Password</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="confirmpassword"
+            placeholder=""
+          />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary text-white">
+          Save changes
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

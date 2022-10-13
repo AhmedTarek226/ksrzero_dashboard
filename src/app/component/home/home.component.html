@@ -1,0 +1,377 @@
+<app-navbar></app-navbar>
+<div class="row justify-content-between mt-lg-3 px-lg-4 px-md-2 py-3">
+  <button
+    class="btn btn-outline-primary w-25 m-3 border border-1 d-lg-none"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#ee"
+  >
+    <i class="fa-solid fa-clipboard"></i> Dashboard
+  </button>
+  <div class="col-lg-2 offcanvas-lg offcanvas-start" id="ee">
+    <app-sidebar></app-sidebar>
+  </div>
+  <!-- change here -->
+  <div class="col-lg-10 col-md-12 mt-2 rounded-3">
+    <!-- Cards -->
+    <div
+      class="d-flex flex-md-row flex-sm-column justify-content-between mb-5 mx-lg-2 mx-md-0"
+    >
+      <!-- Card -->
+      <div
+        class="d-flex justify-content-between align-items-center items-center p-lg-4 p-md-2 rounded-lg shadow-xs border rounded-3"
+        style="background-color: rgb(245, 241, 241)"
+      >
+        <div
+          class="p-3 bg-primary bg-opacity-25 rounded-5"
+          style="height: 52px; width: 50px"
+        >
+          <i class="fa-solid fa-users text-primary fs-6"></i>
+        </div>
+        <div>
+          <p class="mx-4 fs-md-6">Total users</p>
+          <p class="mx-4 fs-5 fs-md-6 fw-bold">1304</p>
+        </div>
+        <input
+          name="add_user_btn"
+          id=""
+          class="btn btn-outline-primary"
+          type="button"
+          value="+"
+          (click)="openModal()"          
+        />
+      </div>
+      <!-- Card -->
+      <div
+        class="d-flex justify-content-between align-items-center items-center p-lg-4 p-md-2 rounded-lg shadow-xs border rounded-3"
+        style="background-color: rgb(245, 241, 241)"
+      >
+        <div
+          class="p-3 bg-primary bg-opacity-25 rounded-5"
+          style="height: 52px; width: 50px"
+        >
+          <i class="fa-solid fa-folder-open text-primary fs-6"></i>
+        </div>
+        <div>
+          <p class="mx-4 fs-md-6">Categories</p>
+          <p class="mx-4 fs-5 fs-md-6 fw-bold">6</p>
+        </div>
+        <input
+          name="add_user_btn"
+          id=""
+          class="btn btn-outline-primary"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#add_category"
+          value="+"
+        />
+      </div>
+      <!-- Card -->
+      <div
+        class="d-flex justify-content-between align-items-center items-center p-lg-4 p-md-2 rounded-lg shadow-xs border rounded-3"
+        style="background-color: rgb(245, 241, 241)"
+      >
+        <div
+          class="p-3 bg-primary bg-opacity-25 rounded-5"
+          style="height: 52px; width: 50px"
+        >
+          <i class="fa-solid fa-cart-shopping text-primary fs-6"></i>
+        </div>
+        <div>
+          <p class="mx-4 fs-md-6">Total orders</p>
+          <p class="mx-4 fs-md-6 fs-5 fw-bold">320</p>
+        </div>
+        <a
+          name="view_delivered_orders_btn"
+          id=""
+          class="btn btn-outline-primary"
+          role="button"
+          href="/delivered_orders.html"
+          >></a
+        >
+      </div>
+      <!-- Card -->
+      <div
+        class="d-flex justify-content-between align-items-center items-center p-lg-4 p-md-2 rounded-lg shadow-xs border rounded-3"
+        style="background-color: rgb(245, 241, 241)"
+      >
+        <div
+          class="p-3 bg-primary bg-opacity-25 rounded-5"
+          style="height: 52px; width: 50px"
+        >
+          <i class="fa-solid fa-stopwatch text-primary fs-5"></i>
+        </div>
+        <div>
+          <p class="mx-4 fs-md-6">Pending ads</p>
+          <p class="mx-4 fs-5 fs-md-6 fw-bold">35</p>
+        </div>
+        <a
+          name="view_pending_ads_btn"
+          id=""
+          class="btn btn-outline-primary"
+          role="button"
+          href="pending_ads.html"
+          >></a
+        >
+      </div>
+    </div>
+    <p
+      class="mb-5 fs-3 text-primary border rounded-5 shadow-sm py-2 fw-bold text-center"
+    >
+      Latest updates
+    </p>
+    <div
+      class="container mb-4 rounded-5"
+      style="width: 95%; background-color: rgb(245, 241, 241)"
+    >
+      <div class="row justify-content-lg-evenly">
+        <div class="col-4 bg-white shadow-sm py-3 border">
+          <table
+            class="table table-striped caption-top table-hover text-center align-baseline rounded-3"
+          >
+            <caption class="fs-4 border-bottom mb-2 text-dark text-center">
+              New Users
+              <i class="fa-solid fa-arrow-turn-down fs-6 ms-2"></i>
+            </caption>
+            <thead class="table" style="font-size: 17px">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Joining date</th>
+                <th scope="col">Profile</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Ahmed Tarek</td>
+                <td>22-9-2022</td>
+                <td>
+                  <button type="button" class="btn btn-outline-primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Ahmed Tarek</td>
+                <td>22-9-2022</td>
+                <td>
+                  <button type="button" class="btn btn-outline-primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Ahmed Tarek</td>
+                <td>22-9-2022</td>
+                <td>
+                  <button type="button" class="btn btn-outline-primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Ahmed Tarek</td>
+                <td>22-9-2022</td>
+                <td>
+                  <button type="button" class="btn btn-outline-primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Ahmed Tarek</td>
+                <td>22-9-2022</td>
+                <td>
+                  <button type="button" class="btn btn-outline-primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-7 bg-white shadow-sm py-3 border">
+          <table
+            class="table table-striped caption-top table-hover text-center align-baseline rounded-3"
+          >
+            <caption class="fs-4 border-bottom mb-2 text-dark text-center">
+              New Products
+              <i class="fa-solid fa-arrow-turn-down fs-6 ms-2"></i>
+            </caption>
+            <thead class="table" style="font-size: 17px">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Price</th>
+                <th scope="col">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Play station 4</td>
+                <td>300 EGP</td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#view_ad"
+                  >
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Play station 4</td>
+                <td>300 EGP</td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#view_ad"
+                  >
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Play station 4</td>
+                <td>300 EGP</td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#view_ad"
+                  >
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Play station 4</td>
+                <td>300 EGP</td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#view_ad"
+                  >
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Play station 4</td>
+                <td>300 EGP</td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#view_ad"
+                  >
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container px-5 border rounded-5"
+      style="width: 95%; background-color: rgb(245, 241, 241)"
+    >
+      <div class="row">
+        <div class="col-10 bg-white shadow-sm py-3 border">
+          <table
+            class="table table-striped caption-top table-hover text-center align-baseline"
+          >
+            <caption class="fs-4 mb-2 border-bottom text-dark text-center">
+              New Orders
+            </caption>
+            <thead class="table" style="font-size: 17px">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Order type</th>
+                <th scope="col">Seller</th>
+                <th scope="col">Buyer</th>
+                <th scope="col">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Buying</td>
+                <td>Ahmed Tarek - Cairo</td>
+                <td>Ali Ahmed- Alex</td>
+                <td>
+                  <button type="button" class="btn btn-outline-primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Buying</td>
+                <td>Ahmed Tarek - Cairo</td>
+                <td>Ali Ahmed- Alex</td>
+                <td>
+                  <button type="button" class="btn btn-outline-primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Buying</td>
+                <td>Ahmed Tarek - Cairo</td>
+                <td>Ali Ahmed- Alex</td>
+                <td>
+                  <button type="button" class="btn btn-outline-primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Buying</td>
+                <td>Ahmed Tarek - Cairo</td>
+                <td>Ali Ahmed- Alex</td>
+                <td>
+                  <button type="button" class="btn btn-outline-primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Buying</td>
+                <td>Ahmed Tarek - Cairo</td>
+                <td>Ali Ahmed- Alex</td>
+                <td>
+                  <button type="button" class="btn btn-outline-primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
