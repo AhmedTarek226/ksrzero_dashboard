@@ -29,15 +29,13 @@
         </div>
         <div>
           <p class="mx-4 fs-md-6">Total users</p>
-          <p class="mx-4 fs-5 fs-md-6 fw-bold">1304</p>
+          <p class="mx-4 fs-5 fs-md-6 fw-bold">{{dashInfo['numOfUsers']}}</p>
         </div>
         <input
-          name="add_user_btn"
-          id=""
           class="btn btn-outline-primary"
           type="button"
           value="+"
-          (click)="openModal()"          
+          (click)="openAddUserModal()"        
         />
       </div>
       <!-- Card -->
@@ -53,16 +51,16 @@
         </div>
         <div>
           <p class="mx-4 fs-md-6">Categories</p>
-          <p class="mx-4 fs-5 fs-md-6 fw-bold">6</p>
+          <p class="mx-4 fs-5 fs-md-6 fw-bold">{{dashInfo['numOfCategories']}}</p>
         </div>
         <input
           name="add_user_btn"
           id=""
           class="btn btn-outline-primary"
           type="button"
-          data-bs-toggle="modal"
-          data-bs-target="#add_category"
           value="+"
+          (click)="openAddCategoryModal()"        
+
         />
       </div>
       <!-- Card -->
@@ -78,14 +76,14 @@
         </div>
         <div>
           <p class="mx-4 fs-md-6">Total orders</p>
-          <p class="mx-4 fs-md-6 fs-5 fw-bold">320</p>
+          <p class="mx-4 fs-md-6 fs-5 fw-bold">{{dashInfo['numOfDeliveredOrders']}}</p>
         </div>
         <a
           name="view_delivered_orders_btn"
           id=""
           class="btn btn-outline-primary"
           role="button"
-          href="/delivered_orders.html"
+          routerLink="/deliveredOrders"
           >></a
         >
       </div>
@@ -102,14 +100,14 @@
         </div>
         <div>
           <p class="mx-4 fs-md-6">Pending ads</p>
-          <p class="mx-4 fs-5 fs-md-6 fw-bold">35</p>
+          <p class="mx-4 fs-5 fs-md-6 fw-bold">{{dashInfo['numOfPendingAds']}}</p>
         </div>
         <a
           name="view_pending_ads_btn"
           id=""
           class="btn btn-outline-primary"
           role="button"
-          href="pending_ads.html"
+          routerLink="/pendingAds"
           >></a
         >
       </div>
@@ -140,51 +138,11 @@
                 <th scope="col">Profile</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody *ngFor="let user of dashInfo['newUsers']; index as i;">
               <tr>
-                <th scope="row">1</th>
-                <td>Ahmed Tarek</td>
-                <td>22-9-2022</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Ahmed Tarek</td>
-                <td>22-9-2022</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Ahmed Tarek</td>
-                <td>22-9-2022</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Ahmed Tarek</td>
-                <td>22-9-2022</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Ahmed Tarek</td>
-                <td>22-9-2022</td>
+                <th scope="row">{{i+1}}</th>
+                <td>{{user.userName | titlecase}} </td>
+                <td>{{user.time |date: 'mediumDate'}}</td>
                 <td>
                   <button type="button" class="btn btn-outline-primary">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -210,71 +168,11 @@
                 <th scope="col">Details</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody *ngFor="let product of dashInfo['pendingAds']; index as i;">
               <tr>
-                <th scope="row">1</th>
-                <td>Play station 4</td>
-                <td>300 EGP</td>
-                <td>
-                  <button
-                    type="button"
-                    class="btn btn-outline-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#view_ad"
-                  >
-                    <i class="fa-solid fa-eye"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Play station 4</td>
-                <td>300 EGP</td>
-                <td>
-                  <button
-                    type="button"
-                    class="btn btn-outline-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#view_ad"
-                  >
-                    <i class="fa-solid fa-eye"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Play station 4</td>
-                <td>300 EGP</td>
-                <td>
-                  <button
-                    type="button"
-                    class="btn btn-outline-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#view_ad"
-                  >
-                    <i class="fa-solid fa-eye"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Play station 4</td>
-                <td>300 EGP</td>
-                <td>
-                  <button
-                    type="button"
-                    class="btn btn-outline-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#view_ad"
-                  >
-                    <i class="fa-solid fa-eye"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Play station 4</td>
-                <td>300 EGP</td>
+                <th scope="row">{{i+1}}</th>
+                <td>{{product['title']}}</td>
+                <td>{{product['price']}} EGP</td>
                 <td>
                   <button
                     type="button"
@@ -302,7 +200,9 @@
           >
             <caption class="fs-4 mb-2 border-bottom text-dark text-center">
               New Orders
+              <i class="fa-solid fa-arrow-turn-down fs-6 ms-2"></i>
             </caption>
+
             <thead class="table" style="font-size: 17px">
               <tr>
                 <th scope="col">#</th>
@@ -312,62 +212,20 @@
                 <th scope="col">Details</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody *ngFor="let order of dashInfo['newOrders']; index as i;">
               <tr>
-                <th scope="row">1</th>
-                <td>Buying</td>
-                <td>Ahmed Tarek - Cairo</td>
-                <td>Ali Ahmed- Alex</td>
+                <th scope="row">{{i+1}}</th>
+                <td *ngIf="!order['exchangable']">Buying</td>
+                <td *ngIf="order['exchangable']">Exchanging</td>
+                <td>{{dashInfo['ordersDetails'][i]['orderBuyerDetails']['userName'] | titlecase}} - {{order['addressfrom']['city']}}</td>
+                <td>{{dashInfo['ordersDetails'][i]['orderSellerDetails']['userName'] | titlecase}} - {{order['addressto']['city']}}</td>
                 <td>
                   <button type="button" class="btn btn-outline-primary">
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   </button>
                 </td>
               </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Buying</td>
-                <td>Ahmed Tarek - Cairo</td>
-                <td>Ali Ahmed- Alex</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Buying</td>
-                <td>Ahmed Tarek - Cairo</td>
-                <td>Ali Ahmed- Alex</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Buying</td>
-                <td>Ahmed Tarek - Cairo</td>
-                <td>Ali Ahmed- Alex</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Buying</td>
-                <td>Ahmed Tarek - Cairo</td>
-                <td>Ali Ahmed- Alex</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </button>
-                </td>
-              </tr>
+             
             </tbody>
           </table>
         </div>

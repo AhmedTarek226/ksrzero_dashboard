@@ -1,6 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import {Mat} from '@angular/material/paginator'
+
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+import{MatDialogModule} from '@angular/material/dialog';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,13 +30,15 @@ import { LoaderComponent } from './component/loader/loader.component';
 import { MainLayoutComponent } from './component/main-layout/main-layout.component';
 import { NotfoundComponent } from './component/notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpInterceptors } from 'src/service/httpinterceptor';
+import { HttpInterceptors } from 'src/app/service/httpinterceptor';
 import { AddUserComponent } from './component/home/add-user/add-user.component';
 import { AddCategoryComponent } from './component/home/add-category/add-category.component';
 import { ViewPendingAdComponent } from './component/shared/view-pending-ad/view-pending-ad.component';
 import { ViewProductComponent } from './component/categories/view-product/view-product.component';
 import { ViewBuyingOrderComponent } from './component/shared/view-buying-order/view-buying-order.component';
 import { ViewExchangingOrderComponent } from './component/shared/view-exchanging-order/view-exchanging-order.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -53,15 +64,22 @@ import { ViewExchangingOrderComponent } from './component/shared/view-exchanging
     AddCategoryComponent,
     ViewPendingAdComponent,
     ViewProductComponent,
-    ViewBuyingOrderComponent,
     ViewExchangingOrderComponent
+  ],
+  entryComponents:[
+    ViewBuyingOrderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+   MatPaginatorModule,
+   NgxPaginationModule,
+   BrowserAnimationsModule,
+   MatDialogModule
   ],
   providers: [HttpInterceptors],
   bootstrap: [AppComponent]
