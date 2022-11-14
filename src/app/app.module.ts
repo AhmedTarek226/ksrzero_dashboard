@@ -20,14 +20,28 @@ import { ExchangingOrdersComponent } from './component/exchanging-orders/exchang
 import { LoaderComponent } from './component/loader/loader.component';
 import { MainLayoutComponent } from './component/main-layout/main-layout.component';
 import { NotfoundComponent } from './component/notfound/notfound.component';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpInterceptors } from 'src/service/httpinterceptor';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpInterceptors } from './service/httpinterceptor';
 import { AddUserComponent } from './component/home/add-user/add-user.component';
 import { AddCategoryComponent } from './component/home/add-category/add-category.component';
 import { ViewPendingAdComponent } from './component/shared/view-pending-ad/view-pending-ad.component';
 import { ViewProductComponent } from './component/categories/view-product/view-product.component';
 import { ViewBuyingOrderComponent } from './component/shared/view-buying-order/view-buying-order.component';
 import { ViewExchangingOrderComponent } from './component/shared/view-exchanging-order/view-exchanging-order.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ViewdetailsComponent } from './component/viewdetails/viewdetails.component';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS , MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import { NgScrollbarModule } from 'ngx-scrollbar';
+import { LoadingInterceptor } from './service/loading.interceptor';
+import { DeliveredBuyingComponent } from './component/delivered-buying/delivered-buying/delivered-buying.component';
+import { DeliveredExchangingComponent } from './component/delivered-exchanging/delivered-exchanging/delivered-exchanging.component';
+import { AddAdvComponent } from './component/add-adv/add-adv/add-adv.component';
+
 
 
 @NgModule({
@@ -54,16 +68,34 @@ import { ViewExchangingOrderComponent } from './component/shared/view-exchanging
     ViewPendingAdComponent,
     ViewProductComponent,
     ViewBuyingOrderComponent,
-    ViewExchangingOrderComponent
+    ViewExchangingOrderComponent,
+    ViewdetailsComponent,
+    DeliveredBuyingComponent,
+    DeliveredExchangingComponent,
+    AddAdvComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+    MatTableModule,
+    NgxPaginationModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatIconModule,
+    NgScrollbarModule,
   ],
-  providers: [HttpInterceptors],
+  providers: [HttpInterceptors
+ 
+    ,{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}} ,
+   { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

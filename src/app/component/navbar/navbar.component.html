@@ -1,34 +1,33 @@
-<nav class="sticky-top">
+<nav class="">
   <div class="navbar">
-    <div class="container">
-      <a href="#" class="navbar-brand fs-3 text-light">/zero</a>
-      <form
+    <div class="container pt-0 mx-0 mb-2 w-100">
+      <a href="" className="navbar-brand p-0 ps-3"
+        ><img
+          src="../../../assets/images/Untitled-3.png"
+          alt=""
+          srcSet
+          width="200px"
+      /></a>
+      <!-- <form
         class="d-flex w-50 position-relative d-none d-md-block"
         role="search"
       >
-        <!-- search input -->
         <input
           class="form-control me-2 border-primary rounded-pill"
           type="search"
           placeholder="Search"
           aria-label="Search"
         />
-        <!-- search icon -->
-        <button
-          class="btn text-primary position-absolute last"
-          type="submit"
-        >
+        <button class="btn text-primary position-absolute last" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-      </form>
+      </form> -->
       <div>
         <button
-          class="btn btn-primary text-light border border-1"
-          data-bs-toggle="modal"
-          data-bs-target="#sign_in"
+          class="btn btn-outline-primary rounded-pill px-3 mx-lg-3"
+          routerLink="/dashbord/logout"
         >
-          <i class="fa-solid fa-right-to-bracket"></i>
-          Logout
+          Logout <i class="fa-solid fa-right-to-bracket"></i>
         </button>
       </div>
     </div>

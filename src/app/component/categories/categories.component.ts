@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { category } from 'src/app/modules/pendingAdd';
+import { CategoryService } from 'src/app/service/category.service';
+import { ProductsComponent } from './products/products.component';
+
 
 @Component({
   selector: 'app-categories',
@@ -6,10 +11,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-
-  constructor() { }
+  catres!:category[]
+  constructor(private service:CategoryService, private router:Router,) { }
 
   ngOnInit(): void {
+    this.service.getcategoryname().subscribe((data)=>{
+        console.log(data)
+        this.catres=data
+    })
   }
 
 }
