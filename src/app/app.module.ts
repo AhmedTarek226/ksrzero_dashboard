@@ -41,6 +41,9 @@ import { LoadingInterceptor } from './service/loading.interceptor';
 import { DeliveredBuyingComponent } from './component/delivered-buying/delivered-buying/delivered-buying.component';
 import { DeliveredExchangingComponent } from './component/delivered-exchanging/delivered-exchanging/delivered-exchanging.component';
 import { AddAdvComponent } from './component/add-adv/add-adv/add-adv.component';
+import { ToastrModule } from 'ngx-toastr';
+import { ConfirmBoxConfigModule, DialogConfigModule, NgxAwesomePopupModule, ToastNotificationConfigModule } from '@costlydeveloper/ngx-awesome-popup';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -90,6 +93,11 @@ import { AddAdvComponent } from './component/add-adv/add-adv/add-adv.component';
     MatFormFieldModule,
     MatIconModule,
     NgScrollbarModule,
+    NgxAwesomePopupModule.forRoot(), // Essential, mandatory main module.
+    DialogConfigModule.forRoot(), // Needed for instantiating dynamic components.
+    ConfirmBoxConfigModule.forRoot(), // Needed for instantiating confirm boxes.
+    ToastNotificationConfigModule.forRoot(), // Needed for instantiating toast notifications.
+    Ng2SearchPipeModule
   ],
   providers: [HttpInterceptors
  

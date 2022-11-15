@@ -9,7 +9,8 @@ import { DeliveredOrdersService } from 'src/app/service/delivered-orders.service
 })
 export class DeliveredExchangingComponent implements OnInit {
   data!:deliveredOrdersResponse;
-
+  searchTerm = '';
+  term = '';
   currentPage!:number;
   totalItems!:number;
   itemsPerPage!:number;

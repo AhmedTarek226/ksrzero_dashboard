@@ -1,3 +1,10 @@
+<div class="row">
+  
+    <div class="input-group mb-3 mt-5 ml-g">
+    <input type="text" class="form-control"[(ngModel)]="term" >
+    <div class="input-group-append"><button class="btn btn-primary"><i class="fas fa-search"></i></button></div>
+  </div>
+</div>
 <table class="table table-hover text-center align-baseline">
     <thead class="table" style="font-size: 17px">
         <tr>
@@ -10,7 +17,7 @@
         </tr>
     </thead>
     <tbody *ngFor="
-    let order of data.deliveredOrders
+    let order of data.deliveredOrders| filter: term 
       | paginate
         : {
             itemsPerPage: itemsPerPage,

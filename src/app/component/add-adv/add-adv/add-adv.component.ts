@@ -1,3 +1,4 @@
+import { DialogRef } from '@angular/cdk/dialog';
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -52,7 +53,7 @@ export class AddAdvComponent implements OnInit {
   categoryId: any
   usrFormGroup: FormGroup;
   public loginForm!: FormGroup
-  constructor(private addadvs: AddAdsService, private fb: FormBuilder, private http: HttpClient) {
+  constructor(private addadvs: AddAdsService, private fb: FormBuilder, private http: HttpClient ,private dialogRef :DialogRef) {
     this.usrFormGroup = this.fb.group({
       categoryId: ['', [Validators.required]],
       userEmail: ['', [Validators.required]],
@@ -214,6 +215,7 @@ this.x=0
     //  console.log( )
 
        this.addadvs.addAds(this.usrFormGroup.value.userEmail,formData).subscribe((res)=>{
+        this.onCloseClick()
        })
 
     // this.http.post(`http://localhost:4000/dashboard/addProduct/${this.usrFormGroup.value.userEmail}`, formData).subscribe(res => {
@@ -223,5 +225,8 @@ this.x=0
 
 
     // })
+  }
+  onCloseClick(){
+    this.dialogRef.close();
   }
 }

@@ -12,7 +12,8 @@ import { ViewExchangingOrderComponent } from '../shared/view-exchanging-order/vi
   styleUrls: ['./exchanging-orders.component.css']
 })
 export class ExchangingOrdersComponent implements OnInit {
-
+  searchTerm = '';
+  term = '';
   subscribtion !:Subscription;
   response:ExchangingOrdersResponse;
   currentPage:number;

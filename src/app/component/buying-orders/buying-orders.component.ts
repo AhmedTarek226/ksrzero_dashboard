@@ -11,6 +11,8 @@ import { ViewBuyingOrderComponent } from '../shared/view-buying-order/view-buyin
   styleUrls: ['./buying-orders.component.css']
 })
 export class BuyingOrdersComponent implements OnInit {
+  searchTerm = '';
+  term = '';
   subscribtion !:Subscription;
   response:BuyingOrdersResponse;
   currentPage:number;

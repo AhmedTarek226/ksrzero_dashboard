@@ -6,6 +6,7 @@ export interface users {
     "time":Date,
     "address":address
     "ads":Array<string>
+    "orders":Array<string>
 }
 export interface address{
     "blockNumber": Number,

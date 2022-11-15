@@ -8,7 +8,8 @@ import { DeliveredOrdersService } from 'src/app/service/delivered-orders.service
   styleUrls: ['./delivered-buying.component.css']
 })
 export class DeliveredBuyingComponent implements OnInit {
-
+  searchTerm = '';
+  term = '';
   data!:deliveredOrdersResponse;
 
   currentPage!:number;
